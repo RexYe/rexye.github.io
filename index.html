@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Hexo, Shawn Ye" />
 
 
 
@@ -87,20 +87,23 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico?v=5.1.2" />
 
 
 
 
 
 
+<meta name="description" content="记录自己的心得">
 <meta property="og:type" content="website">
-<meta property="og:title" content="肖恩">
+<meta property="og:title" content="肖恩的球">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="肖恩">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:site_name" content="肖恩的球">
+<meta property="og:description" content="记录自己的心得">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="肖恩">
+<meta name="twitter:title" content="肖恩的球">
+<meta name="twitter:description" content="记录自己的心得">
 
 
 
@@ -109,13 +112,13 @@
   var CONFIG = {
     root: '/',
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -135,7 +138,7 @@
 
 
 
-  <title>肖恩</title>
+  <title>肖恩的球</title>
   
 
 
@@ -147,7 +150,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -167,7 +170,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">肖恩</span>
+        <span class="site-title">肖恩的球</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -197,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -207,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            关于
           </a>
         </li>
       
@@ -217,7 +220,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            文章
           </a>
         </li>
       
@@ -227,7 +230,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -269,11 +272,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shawn Ye">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="肖恩">
+      <meta itemprop="name" content="肖恩的球">
     </span>
 
     
@@ -283,7 +286,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/15/手机号分位处理/" itemprop="url">第一篇测试</a></h1>
+                <a class="post-title-link" href="/2017/08/15/手机号分位处理/" itemprop="url">手机号分位处理</a></h1>
         
 
         <div class="post-meta">
@@ -293,9 +296,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T15:35:51+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T15:35:51+08:00">
                 2017-08-15
               </time>
             
@@ -339,12 +342,14 @@
 11位的手机号在用户输入时挤在一块，经常出现误删多输等情况，体验非常差。
 
 所以为了解决这样的问题，我们通常将手机号进行分位处理，处理成
-#153 8113 
+#153 8113 77xx
+
+这样的形式下面仔细分析一下这
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/15/手机号分位处理/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -399,11 +404,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shawn Ye">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="肖恩">
+      <meta itemprop="name" content="肖恩的球">
     </span>
 
     
@@ -413,7 +418,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/15/hello-world/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/08/15/hello-world/" itemprop="url">第一篇（测试用）</a></h1>
         
 
         <div class="post-meta">
@@ -423,9 +428,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-15T14:14:51+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T15:35:50+08:00">
                 2017-08-15
               </time>
             
@@ -465,12 +470,12 @@
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pro
           ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/15/hello-world/#more" rel="contents">
-              Weiterlesen &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -541,11 +546,11 @@
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/images/avatar.jpg"
                alt="Shawn Ye" />
           <p class="site-author-name" itemprop="name">Shawn Ye</p>
            
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">记录自己的心得</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -554,7 +559,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
                 <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
@@ -577,17 +582,6 @@
                   
                     
                       GitHub
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="yeql_7@163.com" target="_blank" title="E-Mail">
-                  
-                    <i class="fa fa-fw fa-envelope"></i>
-                  
-                    
-                      E-Mail
                     
                 </a>
               </span>
@@ -634,13 +628,13 @@
 
 
   <div class="powered-by">
-    Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+    由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
   </div>
 
   <span class="post-meta-divider">|</span>
 
   <div class="theme-info">
-    Theme &mdash;
+    主题 &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
       NexT.Muse
     </a>
