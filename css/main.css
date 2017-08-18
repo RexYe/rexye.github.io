@@ -1171,7 +1171,7 @@ pre .javascript .function {
 }
 .logo {
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 50px;
   line-height: 36px;
   vertical-align: top;
 }
@@ -1241,7 +1241,7 @@ pre .javascript .function {
 }
 .menu .menu-item {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 20px;
   list-style: none;
 }
 @media screen and (max-width: 767px) {
@@ -1251,7 +1251,7 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 13px;
+  font-size: 20px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -2027,7 +2027,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffb438;
+  background: #ff46e5;
 }
 .links-of-blogroll {
   font-size: 13px;
