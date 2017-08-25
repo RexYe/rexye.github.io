@@ -1141,6 +1141,8 @@ pre .javascript .function {
 }
 .header {
   background: transparent;
+  background: rgba(186,186,186,0.5);
+  height: 180px;
 }
 .header-inner {
   position: relative;
@@ -1161,7 +1163,7 @@ pre .javascript .function {
 .brand {
   position: relative;
   display: inline-block;
-  padding: 0 140px;
+  padding: 0 300px;
   color: #fff;
   background: #222;
   border-bottom: none;
@@ -2027,7 +2029,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #32ba86;
+  background: #0b4a7e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2146,8 +2148,10 @@ pre .javascript .function {
   color: #87daff;
 }
 .footer {
-  font-size: 14px;
+  font-size: 16px;
   color: #999;
+  background: #222;
+  padding: 60px 0;
 }
 .footer img {
   border: none;
@@ -2157,7 +2161,7 @@ pre .javascript .function {
 }
 .with-love {
   display: inline-block;
-  margin: 0 5px;
+  margin: 0 9px;
 }
 .powered-by,
 .theme-info {
