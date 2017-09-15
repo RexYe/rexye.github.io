@@ -94,20 +94,20 @@
 
 
 
-<meta name="description" content="#情景模拟：  ####A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。 ####并且点击会根据路由跳转到B页面。 ####而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#">
+<meta name="description" content="情景模拟：  A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。并且点击会根据路由跳转到B页面。而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#125;&apos; @click=&apos;t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Vue中一种简单的路由传参办法">
 <meta property="og:url" content="http://yoursite.com/2017/09/15/关于Vue中一种简单的路由传参办法/index.html">
 <meta property="og:site_name" content="肖恩的球">
-<meta property="og:description" content="#情景模拟：  ####A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。 ####并且点击会根据路由跳转到B页面。 ####而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#">
+<meta property="og:description" content="情景模拟：  A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。并且点击会根据路由跳转到B页面。而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#125;&apos; @click=&apos;t">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2979086-86d879d45020551b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2979086-164db17214543320.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2979086-8e3f381d4f8b0fe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-09-15T02:32:23.688Z">
+<meta property="og:updated_time" content="2017-09-15T02:35:50.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Vue中一种简单的路由传参办法">
-<meta name="twitter:description" content="#情景模拟：  ####A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。 ####并且点击会根据路由跳转到B页面。 ####而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#">
+<meta name="twitter:description" content="情景模拟：  A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。并且点击会根据路由跳转到B页面。而跳转到B页面后，我需要A中的item。  12&amp;lt;div v-for=&quot;(item,index) in book&quot;  :class=&apos;&amp;#123;on:$route.path === `/$&amp;#123;item.to&amp;#125;/`&amp;#125;&apos; @click=&apos;t">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2979086-86d879d45020551b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -337,30 +337,25 @@
       
 
       
-        <p>#情景模拟：</p>
+        <p><em>情景模拟</em>：</p>
 <blockquote>
-<p>####A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。</p>
-<p>####并且点击会根据路由跳转到B页面。</p>
-<p>####而跳转到B页面后，我需要A中的item。</p>
+<p>A页面中，有一些div是根据A中的book数据通过v-for生成的，比如item。<br>并且点击会根据路由跳转到B页面。<br>而跳转到B页面后，我需要A中的item。</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div v-for="(item,index) in book"  :class='&#123;on:$route.path === `/$&#123;item.to&#125;/`&#125;' @click='toOther(item.to)'&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">toOther(to,run) &#123;</div><div class="line">   <span class="keyword">if</span>(<span class="keyword">this</span>.$route.path!==<span class="string">`/<span class="subst">$&#123;to&#125;</span>`</span>)&#123;</div><div class="line">     location.hash = to;</div><div class="line">   &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p>#解决办法：</p>
+<p><em>解决办法</em>：</p>
 <blockquote>
-<p>####在A中的click事件中将item传进toOther()函数中，再根据路由传入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">toOther(to,run) &#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.$route.path!==<span class="string">`/<span class="subst">$&#123;to&#125;</span>`</span>)&#123;</div><div class="line">        location.hash = to+<span class="string">'?'</span>+run.key;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
-<p>####即将要传的参数添加在原本url加？之后，这样既不影响路由，也比较方便。<br>                                                           如图1所示：</p>
+<p>在A中的click事件中将item传进toOther()函数中，再根据路由传入<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">toOther(to,run) &#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.$route.path!==<span class="string">`/<span class="subst">$&#123;to&#125;</span>`</span>)&#123;</div><div class="line">        location.hash = to+<span class="string">'?'</span>+run.key;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+<p>即将要传的参数添加在原本url加？之后，这样既不影响路由，也比较方便。<br>                                                           如图1所示：</p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/2979086-86d879d45020551b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图1.png"></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2979086-164db17214543320.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图2.png"></p>
 <blockquote>
-<p>如图2，这样子我们便可以在 this.$route 的fullPath中拿到A中我们需要传递的参数了。<br>具体要拿还需要进行字符串的分割取出所需的信息，<br>但是这样子会很繁琐，<br>我们只需多加几个字，</p>
-<p>###在你的参数前加上’sth’=</p>
+<p>如图2，这样子我们便可以在 this.$route 的fullPath中拿到A中我们需要传递的参数了。<br>具体要拿还需要进行字符串的分割取出所需的信息，<br>但是这样子会很繁琐，<br>我们只需多加几个字，<br>在你的参数前加上’sth’=</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">toOther(to,run) &#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>.$route.path!==<span class="string">`/<span class="subst">$&#123;to&#125;</span>`</span>)&#123;</div><div class="line">        location.hash = to+<span class="string">'?'</span>+<span class="string">'book_key='</span>+run.key;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
 <blockquote>
-<p>#####你就会发现你可以在query中拿到这些个数据</p>
-<p>#####并且是一个object的形式</p>
-<p>#####简直不能更完美!</p>
+<p>你就会发现你可以在query中拿到这些个数据<br>并且是一个object的形式<br>简直不能更完美!</p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/2979086-8e3f381d4f8b0fe2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图3.png"></p>
 
