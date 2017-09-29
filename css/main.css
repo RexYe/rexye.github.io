@@ -521,6 +521,7 @@ body {
 .main-inner {
   margin: 0 auto;
   width: 700px;
+  padding: 120px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -1141,8 +1142,9 @@ pre .javascript .function {
 }
 .header {
   background: transparent;
-  background: rgba(186,186,186,0.5);
+  background: #222;
   height: 180px;
+  box-shadow: 10px 20px 10px #888;
 }
 .header-inner {
   position: relative;
@@ -1252,8 +1254,10 @@ pre .javascript .function {
   }
 }
 .menu .menu-item a {
+  color: #828282;
   display: block;
-  font-size: 20px;
+  font-size: 18px;
+  margin: 10px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1263,6 +1267,10 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover {
   border-bottom-color: #222;
+}
+.menu .menu-item a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -2029,7 +2037,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a6e59e;
+  background: #08db74;
 }
 .links-of-blogroll {
   font-size: 13px;
