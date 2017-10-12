@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[call与apply]]></title>
+      <url>/2017/10/12/call%E4%B8%8Eapply/</url>
+      <content type="html"><![CDATA[<h2 id="call与apply"><a href="#call与apply" class="headerlink" title="call与apply"></a>call与apply</h2><p>两者的功能大致一样</p>
+<p>均是为了动态改变this，当一个object没有某个方法，但是其他的有，我们可以借助call或apply用其它对象的方法来操作。</p>
+<p>具体例子如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a+b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> a*b;</div><div class="line">&#125;</div><div class="line">add.call(sub,<span class="number">3</span>,<span class="number">8</span>);</div><div class="line">add.apply(sub,[<span class="number">4</span>,<span class="number">9</span>]);</div></pre></td></tr></table></figure>
+<p>sub函数中没有加法，此时利用call或者apply即可”借”到add中的加法。</p>
+<p>实现对象继承的例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Father = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.FamilyName = <span class="string">'Ye'</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> Son = &#123;&#125;;</div><div class="line">Father.call(Son);</div><div class="line">Father.apply(Son);</div></pre></td></tr></table></figure></p>
+<p>实现多重继承的例子如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Class1</span>(<span class="params"></span>)  </span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">    <span class="keyword">this</span>.showSub = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)  </span></div><div class="line"><span class="function">    </span>&#123;  </div><div class="line">        <span class="built_in">console</span>.log(a-b);  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Class2</span>(<span class="params"></span>)  </span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">    <span class="keyword">this</span>.showAdd = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)  </span></div><div class="line"><span class="function">    </span>&#123;  </div><div class="line">        <span class="built_in">console</span>.log(a+b);  </div><div class="line">    &#125;  </div><div class="line">&#125;  </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Class3</span>(<span class="params"></span>)  </span></div><div class="line"><span class="function"></span>&#123;  </div><div class="line">    Class1.call(<span class="keyword">this</span>);</div><div class="line">      </div><div class="line">    Class2.call(<span class="keyword">this</span>);  </div><div class="line">&#125; </div><div class="line"><span class="keyword">var</span> result = <span class="keyword">new</span> Class3;</div><div class="line">result.showSub(<span class="number">7</span>,<span class="number">2</span>);<span class="comment">//5</span></div><div class="line">result.showAdd(<span class="number">7</span>,<span class="number">2</span>);<span class="comment">//9</span></div></pre></td></tr></table></figure></p>
+<h4 id="区别-在于接受参数形式不同"><a href="#区别-在于接受参数形式不同" class="headerlink" title="区别 在于接受参数形式不同"></a><em>区别</em> 在于接受参数形式不同</h4><blockquote>
+<p>call 接受连续参数</p>
+<p>apply 最多两个参数，且第二个参数仅接受数组参数或者arguments对象</p>
+</blockquote>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[JavaScript权威指南阅读笔记]]></title>
       <url>/2017/09/30/%E8%BF%81%E7%A7%BB%E6%B5%8B%E8%AF%95/</url>
       <content type="html"><![CDATA[<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><blockquote>
