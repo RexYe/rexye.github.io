@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title><![CDATA[for循环效率对比及其原因]]></title>
+      <url>/2017/10/13/for%E5%BE%AA%E7%8E%AF%E6%95%88%E7%8E%87%E5%AF%B9%E6%AF%94%E5%8F%8A%E5%85%B6%E5%8E%9F%E5%9B%A0/</url>
+      <content type="html"><![CDATA[<h3 id="for循环分为4类："><a href="#for循环分为4类：" class="headerlink" title="for循环分为4类："></a>for循环分为4类：</h3><h2 id="1"><a href="#1" class="headerlink" title="1.++"></a>1.++</h2><h4 id=""><a href="#" class="headerlink" title=""></a><figure class="highlight plain"><figcaption><span>i=0; i<arr.length; i++)&#123;&#125;="" ````<="" span=""></arr.length;></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 2.++优化版</div><div class="line">#### ```` for(let i=0 , len=arr.length; i&lt;len; i++)&#123;&#125;</div></pre></td></tr></table></figure></h4><h2 id="3-–"><a href="#3-–" class="headerlink" title="3.–"></a>3.–</h2><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><figure class="highlight plain"><figcaption><span>i=arr.length-1; i>=0; i--)&#123;&#125;  ````</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">## 4.for in</div><div class="line">####  ```` for(let i in arr)&#123;&#125;</div></pre></td></tr></table></figure></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTimeOfFor</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">100000</span>);</div><div class="line">    <span class="keyword">let</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span> ; i&lt;arr.length ; i++)&#123;</div><div class="line">        arr[i] = i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>,len=arr.length ; i&lt;len ; i++)&#123;</div><div class="line">        arr[i] = i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> date3 = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=arr.length<span class="number">-1</span> ; i&gt;=<span class="number">0</span> ; i--)&#123;</div><div class="line">        arr[i] = i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> date4 = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> arr)&#123;</div><div class="line">        arr[i] = i;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> date5 = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">    <span class="keyword">let</span> for_plus = date2-date1;</div><div class="line">    <span class="keyword">let</span> for_plus_strong = date3-date2;</div><div class="line">    <span class="keyword">let</span> for_minus = date4-date3;</div><div class="line">    <span class="keyword">let</span> for_in = date5-date4;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"++时间："</span>,for_plus);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"++strong版时间："</span>,for_plus_strong);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"--时间："</span>,for_minus);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"for in时间："</span>,for_in);</div><div class="line">&#125;</div><div class="line">getTimeOfFor();</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/2979086-dca3a6a59815e989.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="10w.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2979086-1d2ab27fe7c14045.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="100w.png"></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2979086-4cef26c78e43b003.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="5000w.png"></p>
+<p>第2种方法，即–的效率往往更高，原因如下：</p>
+<ol>
+<li><blockquote>
+<p>–的判断条件为i&gt;=0,0是一个常量；<br>而++的判断条件为i&lt;arr.length, arr.length在循环的过程中会被不断的计算。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>学习过汇编的同学应该知道，</p>
+</blockquote>
+</li>
+</ol>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[call与apply]]></title>
       <url>/2017/10/12/call%E4%B8%8Eapply/</url>
       <content type="html"><![CDATA[<h2 id="call与apply"><a href="#call与apply" class="headerlink" title="call与apply"></a>call与apply</h2><p>两者的功能大致一样</p>
